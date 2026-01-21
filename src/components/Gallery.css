@@ -1,0 +1,115 @@
+.gallery-polaroid-section {
+  padding: 80px 20px;
+  background-color: #fffaf5; /* Creamy background */
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- LIGHT STRING DECORATION --- */
+.light-string {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1;
+}
+
+.wire {
+  width: 100%;
+  height: 20px;
+  border-bottom: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+}
+
+.bulb {
+  width: 12px;
+  height: 18px;
+  background: #ffc2d1;
+  border-radius: 50%;
+  position: absolute;
+  display: inline-block;
+  box-shadow: 0 0 10px #ffc2d1;
+}
+
+/* Positioning bulbs along the wire */
+.bulb:nth-child(2) { left: 10%; top: 12px; }
+.bulb:nth-child(3) { left: 25%; top: 18px; }
+.bulb:nth-child(4) { left: 40%; top: 20px; }
+.bulb:nth-child(5) { left: 55%; top: 20px; }
+.bulb:nth-child(6) { left: 70%; top: 18px; }
+.bulb:nth-child(7) { left: 85%; top: 12px; }
+
+/* --- POLAROID GRID --- */
+.polaroid-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.polaroid-card {
+  position: relative;
+  transition: transform 0.4s ease, z-index 0s;
+}
+
+.polaroid-inner {
+  background: white;
+  padding: 15px 15px 40px 15px; /* Bottom is thicker for text */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: 1px solid #eee;
+}
+
+.polaroid-inner img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.polaroid-caption {
+  font-family: 'Dancing Script', cursive; /* Use a handwriting font */
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: bold;
+}
+
+/* --- THE TAPE EFFECT --- */
+.tape {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 25px;
+  background-color: rgba(255, 194, 209, 0.6); /* Semi-transparent pink */
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* --- SCATTERED ROTATION EFFECT --- */
+.polaroid-card:nth-child(odd) { transform: rotate(-3deg); }
+.polaroid-card:nth-child(even) { transform: rotate(4deg); }
+.polaroid-card:nth-child(3n) { transform: rotate(-5deg); }
+.polaroid-card:nth-child(4n) { transform: rotate(2deg); }
+
+/* Hover Animation: Card Straightens and Pops up */
+.polaroid-card:hover {
+  transform: rotate(0deg) scale(1.08);
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .polaroid-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}

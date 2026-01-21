@@ -1,0 +1,132 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-bottom: 3px solid var(--soft-blue);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Increased gap between logo and text */
+}
+
+/* THE LOGO FIX - Larger and No Gaps */
+.logo-container {
+  width: 70px; /* Increased size from 55px */
+  height: 70px; /* Increased size from 55px */
+  background: white;
+  border-radius: 50%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+  border: 3px solid var(--bakery-pink); /* Slightly thicker pink border */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 0 !important; /* Removes the gap between image and border */
+}
+
+.nav-logo-img {
+  width: 100%; 
+  height: 100%;
+  /* 'cover' makes the logo fill the circle and touch the pink border */
+  object-fit: cover; 
+  display: block;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hindi-name {
+  font-size: 1.2rem; /* Slightly larger to match the new logo size */
+  font-weight: bold;
+  color: var(--dark-navy);
+  line-height: 1;
+}
+
+.eng-name {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark-navy);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--bakery-pink);
+  transform: translateY(-2px);
+}
+
+.nav-cta {
+  background: var(--bakery-pink);
+  color: white !important;
+  padding: 10px 22px;
+  border-radius: 25px;
+  box-shadow: 0 4px 0 #e8a7b8;
+  transition: all 0.2s ease;
+}
+
+.nav-cta:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #e8a7b8;
+}
+
+/* MOBILE RESPONSIVENESS */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--dark-navy);
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 85px; /* Adjusted for larger logo */
+    left: 0;
+    width: 100%;
+    background: var(--cream);
+    padding: 30px;
+    gap: 25px;
+    border-bottom: 4px solid var(--soft-blue);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}

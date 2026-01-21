@@ -1,0 +1,113 @@
+.testimonials-section {
+  padding: 80px 20px;
+  background-color: #fffaf5; /* Matches your bakery theme */
+  text-align: center;
+}
+
+.reviews-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
+/* THE BUBBLE DESIGN */
+.review-bubble {
+  position: relative;
+  width: 320px;
+  background: #ffffff;
+  border: 2.5px solid #ffc2d1; /* Pink border */
+  border-radius: 40px;
+  padding: 35px 25px;
+  box-shadow: 0 15px 30px rgba(255, 194, 209, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* FLOATING ANIMATIONS (Staggered speeds) */
+.float-anim-0 { animation: floatingBubble 5s infinite ease-in-out; }
+.float-anim-1 { animation: floatingBubble 6s infinite ease-in-out 0.5s; }
+.float-anim-2 { animation: floatingBubble 5.5s infinite ease-in-out 1s; }
+
+@keyframes floatingBubble {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+/* DECORATIVE ELEMENTS */
+.quote-mark {
+  font-size: 5rem;
+  color: #ffc2d1;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-family: 'Georgia', serif;
+  opacity: 0.4;
+  line-height: 1;
+}
+
+.review-text {
+  font-size: 1.05rem;
+  color: #1a2a44;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.review-footer {
+  border-top: 2px dashed #ffebf0;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewer-name {
+  font-weight: 800;
+  color: #1a2a44;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.stars-row {
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+/* SPEECH BUBBLE TAIL */
+.bubble-tail {
+  position: absolute;
+  bottom: -15px;
+  left: 50px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-right: 2.5px solid #ffc2d1;
+  border-bottom: 2.5px solid #ffc2d1;
+  transform: rotate(45deg);
+}
+
+/* HOVER EFFECT */
+.review-bubble:hover {
+  transform: scale(1.05) translateY(-10px) !important;
+  background-color: #fffafb;
+  box-shadow: 0 20px 40px rgba(255, 194, 209, 0.3);
+  z-index: 5;
+}
+
+/* RESPONSIVE FOR MOBILE */
+@media (max-width: 768px) {
+  .reviews-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .review-bubble {
+    width: 90%;
+    animation: none; /* Stops floating on mobile for better reading */
+  }
+}

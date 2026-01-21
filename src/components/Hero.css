@@ -1,0 +1,59 @@
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  background: var(--soft-blue);
+  border-radius: 0 0 60px 60px;
+  gap: 30px;
+}
+
+.hero-text-bubble {
+  background: white;
+  padding: 40px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0 15px 0 rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.hero-text-bubble h1 { 
+  color: var(--dark-navy); 
+  font-size: 2.5rem; 
+  margin-bottom: 10px; 
+}
+
+/* Updated Button Styles */
+.order-btn {
+  display: inline-block;
+  background: var(--bakery-pink);
+  text-decoration: none; /* Removes underline */
+  padding: 12px 30px;
+  border-radius: 25px;
+  color: white !important;
+  font-weight: bold;
+  margin-top: 20px;
+  box-shadow: 0 4px 0 #e8a7b8;
+  transition: transform 0.2s ease;
+}
+
+.order-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.hero-visual img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 40px;
+  border: 10px solid white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 768px) {
+  .hero-container { 
+    flex-direction: row; 
+    justify-content: space-around; 
+    text-align: left; 
+  }
+}
